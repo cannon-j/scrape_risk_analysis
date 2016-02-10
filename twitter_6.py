@@ -1,3 +1,6 @@
+# Written by John Cannon for finding Tweets concerning "risks" as determined
+# by "The Global Risks Report 2015" (from World Economic Forum).
+
 import tweepy
 from tweepy import Stream
 from tweepy import OAuthHandler
@@ -7,6 +10,7 @@ import argparse
 import string
 import config
 import json
+import csv
 
 #query = ['asset', 'market', 'financial', 'economy', 'speculative', 'property', 'economic', 'deflation', 'wage', 'energy', 'gasoline', 'petrol', 'oil', 'market', 'stock', 'recession', 'bank', 'infrasture', 'road', 'bridge', 'outage', 'financial', 'fiscal', 'economic', 'fiscal', 'recession', 'unemployment', 'underemployment', 'layoffs', 'inflation', 'weather', 'flood', 'tornado', 'climate', 'global', 'biodiversity', 'earthquake', 'volcano', 'tsumani', 'oil', 'contamination', 'water', 'radioactive', 'organized', 'political', 'corruption', 'impunity', 'deadlock', 'government', 'conflict', 'syrian', 'conflict', 'invasion', 'terrorist', 'boko', 'haram', 'terror', 'al queda', 'terrorism', 'terrorist', 'civil', 'state', 'military', 'coup', 'destruction', 'nuclear', 'bomb', 'biological', 'chemical', 'nuclear', 'WMD', 'nuke', 'urban', 'sprawl', 'food', 'grain', 'hunger', 'foodcrisis', 'starvation', 'malnutrition', 'refugee', 'immigration', 'refugee', 'migrant', 'syria', 'refugee', 'social', 'civil', 'civil', 'ebola', 'polio', 'zika', 'pandemic', 'water', 'drought', 'internet', 'cyber', 'data', 'cyberattack', 'ddos', 'technology', 'genome', 'biology']
 
@@ -120,7 +124,7 @@ class MyListener(StreamListener):
                 parsed_json = json.loads(str(data))
                 f.write(parsed_json['text'].encode('utf-8').lower())
                 query_check(parsed_json['text'].encode('utf-8').lower(),risk_values)
-                print ''
+                #print parsed_json['place']
                 for item in risk_values:
                     print item, risk_values[item]
                 print ''
