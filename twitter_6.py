@@ -14,7 +14,7 @@ import csv
 
 #query = ['asset', 'market', 'financial', 'economy', 'speculative', 'property', 'economic', 'deflation', 'wage', 'energy', 'gasoline', 'petrol', 'oil', 'market', 'stock', 'recession', 'bank', 'infrasture', 'road', 'bridge', 'outage', 'financial', 'fiscal', 'economic', 'fiscal', 'recession', 'unemployment', 'underemployment', 'layoffs', 'inflation', 'weather', 'flood', 'tornado', 'climate', 'global', 'biodiversity', 'earthquake', 'volcano', 'tsumani', 'oil', 'contamination', 'water', 'radioactive', 'organized', 'political', 'corruption', 'impunity', 'deadlock', 'government', 'conflict', 'syrian', 'conflict', 'invasion', 'terrorist', 'boko', 'haram', 'terror', 'al queda', 'terrorism', 'terrorist', 'civil', 'state', 'military', 'coup', 'destruction', 'nuclear', 'bomb', 'biological', 'chemical', 'nuclear', 'WMD', 'nuke', 'urban', 'sprawl', 'food', 'grain', 'hunger', 'foodcrisis', 'starvation', 'malnutrition', 'refugee', 'immigration', 'refugee', 'migrant', 'syria', 'refugee', 'social', 'civil', 'civil', 'ebola', 'polio', 'zika', 'pandemic', 'water', 'drought', 'internet', 'cyber', 'data', 'cyberattack', 'ddos', 'technology', 'genome', 'biology']
 
-query = ['asset bubble', 'market bubble', 'financial bubble', 'bubble economy', 'speculative bubble', 'bubble property', 'economic deflation', 'market deflation', 'world deflation', 'money deflation', 'wage deflation', 'global deflation', 'energy price', 'gasoline price', 'petrol price', 'oil collapse', 'oil price', 'plummeting oil', 'market collapse', 'stock crash', 'market recession', 'bank collapse', 'bank failure', 'bank closing', 'infrasture failure', 'road failure', 'critical infrastrure', 'bridge collapse', 'broken infrastructure', 'power outage', 'market failure', 'financial crisis', 'fiscal crisis', 'financial panic', 'economic collapse', 'fiscal collapse', 'extreme weather', 'weather disaster', 'weather  chaos', 'dangerous weather', 'terrible weather', 'severe weather', 'climate change', 'global warming', 'climate science', 'climate breaking', 'climate analysis', 'climate failure', 'oil spill', 'radioactive contamination', 'contamination water', 'water poison', 'radioactive waste', 'radioactive leak', 'organized crime', 'political corruption', 'political impunity', 'political deadlock', 'government failure', 'illegal government', 'region conflict', 'syrian war', 'global war', 'state conflict', 'iraq invasion', 'troop invasion', 'terrorist attack', 'boko haram', 'terror attack', 'civil war', 'fail state', 'state collapse', 'nation collapse', 'military takeover', 'civil failure', 'mass destruction', 'nuclear bomb', 'dirty bomb', 'biological warfare', 'chemical warfare', 'nuclear warfare', 'fail urban', 'urban collapse', 'urban failure', 'slum urban', 'urban sprawl', 'city sprawl', 'food crisis', 'food shortage', 'grain crisis', 'food shortage', 'food emergency', 'mass hunger', 'refugee crisis', 'refugee problem', 'immigration crisis', 'mass refugee', 'migrant crisis', 'syria refugee', 'social instability', 'social breakdown', 'civil unrest', 'civil instability', 'social unrest', 'civil breakdown', 'water crisis', 'water shortage', 'water poison', 'water fail', 'water emergency', 'water emergency', 'internet breakdown', 'cyber attack', 'cyber war', 'cyber terror', 'cyber crime', 'data attack', 'cyber operations', 'data fraud', 'data breach', 'data theft', 'data leak', 'data crime', 'data attack', 'danger technology', 'misuse technology', 'abuse technology', 'dangerous technology', 'danger genome', 'danger biology', 'recession', 'unemployment', 'underemployment', 'layoffs', 'inflation', 'flood', 'tornado', 'hurricane', 'biodiversity', 'earthquake', 'volcano', 'tsunami', 'terrorism', 'terrorist', 'al quaeda', 'coup', 'WMD', 'nuke', 'ebola', 'zika', 'polio', 'pandemic', 'dengue', 'drought', 'cyberattack', 'ddos']
+query = ['asset bubble', 'market bubble', 'financial bubble', 'bubble economy', 'speculative bubble', 'bubble property', 'economic deflation', 'market deflation', 'world deflation', 'money deflation', 'wage deflation', 'global deflation', 'energy price', 'gasoline price', 'petrol price', 'oil collapse', 'oil price', 'plummeting oil', 'market collapse', 'stock crash', 'market recession', 'bank collapse', 'bank failure', 'bank closing', 'infrasture failure', 'road failure', 'critical infrastrure', 'bridge collapse', 'broken infrastructure', 'power outage', 'market failure', 'financial crisis', 'fiscal crisis', 'financial panic', 'economic collapse', 'fiscal collapse', 'extreme weather', 'weather disaster', 'weather  chaos', 'dangerous weather', 'terrible weather', 'severe weather', 'climate change', 'global warming', 'climate science', 'climate breaking', 'climate analysis', 'climate failure', 'oil spill', 'radioactive contamination', 'contamination water', 'water poison', 'radioactive waste', 'radioactive leak', 'organized crime', 'political corruption', 'political impunity', 'political deadlock', 'government failure', 'illegal government', 'region conflict', 'syrian war', 'global war', 'state conflict', 'iraq invasion', 'troop invasion', 'terrorist attack', 'boko haram', 'terror attack', 'civil war', 'fail state', 'state collapse', 'nation collapse', 'military takeover', 'civil failure', 'mass destruction', 'nuclear bomb', 'dirty bomb', 'biological warfare', 'chemical warfare', 'nuclear warfare', 'fail urban', 'urban collapse', 'urban failure', 'slum urban', 'urban sprawl', 'city sprawl', 'food crisis', 'food shortage', 'grain crisis', 'food shortage', 'food emergency', 'mass hunger', 'refugee crisis', 'refugee problem', 'immigration crisis', 'mass refugee', 'migrant crisis', 'syria refugee', 'social instability', 'social breakdown', 'civil unrest', 'civil instability', 'social unrest', 'civil breakdown', 'water crisis', 'water shortage', 'water poison', 'water fail', 'water emergency', 'water emergency', 'internet breakdown', 'cyber attack', 'cyber war', 'cyber terror', 'cyber crime', 'data attack', 'cyber operations', 'data fraud', 'data breach', 'data theft', 'data leak', 'data crime', 'data attack', 'danger technology', 'misuse technology', 'abuse technology', 'dangerous technology', 'danger genome', 'danger biology', 'recession', 'unemployment', 'underemployment', 'layoffs', 'inflation', 'flood', 'tornado', 'hurricane', 'biodiversity', 'earthquake', 'volcano', 'tsunami', 'terrorism', 'terrorist', 'al quaeda', 'coup', 'WMD', 'nuke', 'ebola', 'zika', 'polio', 'pandemic', 'dengue', 'drought', 'cyberattack', 'ddos', 'refugee']
 
 data_file = 'data.txt'
 
@@ -82,7 +82,7 @@ def query_check(tweet,risk_dict):
     if "food" in tweet and "crisis" in tweet or "food" in tweet and "shortage" in tweet or "grain" in tweet and "crisis" in tweet or "food" in tweet and "shortage" in tweet or "food" in tweet and "emergency" in tweet or "mass" in tweet and "hunger" in tweet or "foodcrisis" in tweet or "starvation" in tweet or "malnutrition" in tweet:
         risk_dict["Food_crises"] += 1
         
-    if "refugee" in tweet and "crisis" in tweet or "refugee" in tweet and "problem" in tweet or "immigration" in tweet and "crisis" in tweet or "mass" in tweet and "refugee" in tweet or "migrant" in tweet and "crisis" in tweet or "syria" in tweet and "refugee" in tweet:
+    if "refugee" in tweet and "crisis" in tweet or "refugee" in tweet and "problem" in tweet or "immigration" in tweet and "crisis" in tweet or "mass" in tweet and "refugee" in tweet or "migrant" in tweet and "crisis" in tweet or "syria" in tweet and "refugee" in tweet or "refugee" in tweet:
         risk_dict["Largescale_involuntary_migration"] += 1
         
     if "social" in tweet and "instability" in tweet or "social" in tweet and "breakdown" in tweet or "civil" in tweet and "unrest" in tweet or "civil" in tweet and "instability" in tweet or "social" in tweet and "unrest" in tweet or "civil" in tweet and "breakdown" in tweet:
@@ -120,6 +120,24 @@ class MyListener(StreamListener):
 
     def on_data(self, data):
         try:
+            with open('data.csv', 'a') as csvfile:
+                parsed_json = json.loads(str(data))
+                
+                rowwriter = csv.writer(csvfile, delimiter='|', quoting=csv.QUOTE_NONE, quotechar='')
+                
+                text_to_write = str(parsed_json['text'].encode('utf-8').lower().replace('#','').replace(':','').replace('\n','').replace('|',''))
+                print text_to_write
+                rowwriter.writerow([text_to_write,str(parsed_json['place'])])
+                
+                query_check(parsed_json['text'].encode('utf-8').lower(),risk_values)
+                
+                #print parsed_json['place']
+                for item in risk_values:
+                    print item, risk_values[item]
+                print ''
+                
+                return True
+            """
             with open(self.outfile, 'a') as f:
                 parsed_json = json.loads(str(data))
                 f.write(parsed_json['text'].encode('utf-8').lower())
@@ -129,6 +147,7 @@ class MyListener(StreamListener):
                     print item, risk_values[item]
                 print ''
                 return True
+            """
             
         except BaseException as e:
             print("Error on_data: %s" % str(e))
