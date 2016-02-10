@@ -11,6 +11,7 @@ import string
 import config
 import json
 import csv
+from prototype import termsToChecks
 
 #query = ['asset', 'market', 'financial', 'economy', 'speculative', 'property', 'economic', 'deflation', 'wage', 'energy', 'gasoline', 'petrol', 'oil', 'market', 'stock', 'recession', 'bank', 'infrasture', 'road', 'bridge', 'outage', 'financial', 'fiscal', 'economic', 'fiscal', 'recession', 'unemployment', 'underemployment', 'layoffs', 'inflation', 'weather', 'flood', 'tornado', 'climate', 'global', 'biodiversity', 'earthquake', 'volcano', 'tsumani', 'oil', 'contamination', 'water', 'radioactive', 'organized', 'political', 'corruption', 'impunity', 'deadlock', 'government', 'conflict', 'syrian', 'conflict', 'invasion', 'terrorist', 'boko', 'haram', 'terror', 'al queda', 'terrorism', 'terrorist', 'civil', 'state', 'military', 'coup', 'destruction', 'nuclear', 'bomb', 'biological', 'chemical', 'nuclear', 'WMD', 'nuke', 'urban', 'sprawl', 'food', 'grain', 'hunger', 'foodcrisis', 'starvation', 'malnutrition', 'refugee', 'immigration', 'refugee', 'migrant', 'syria', 'refugee', 'social', 'civil', 'civil', 'ebola', 'polio', 'zika', 'pandemic', 'water', 'drought', 'internet', 'cyber', 'data', 'cyberattack', 'ddos', 'technology', 'genome', 'biology']
 
@@ -18,15 +19,20 @@ query = ['asset bubble', 'market bubble', 'financial bubble', 'bubble economy', 
 
 data_file = 'data.txt'
 
-risk_values = {"Asset_bubble_in_a_major_economy":0,"Deflation_in_a_major_economy":0,"Energy_price_shock_to_the_global_economy":0,"Failure_of_a_major_financial_mechanism_or_institution":0,"Failure_shortfall_of_critical_infrastructure":0,"Fiscal_crises_in_key_economies":0,"High_structural_unemployment_or_underemployment":0,"Unmanageable_inflation":0,"Extreme_weather_events_eg_floods_storms_etc":0,"Failure_of_climatechange_adaptation":0,"Major_biodiversity_loss_and_ecosystem_collapse_land_or_ocean":0,"Major_natural_catastrophes_eg_earthquake_tsunami_volcanic_eruption_geomagnetic_storms":0,"Manmade_environmental_catastrophes_eg_oil_spill_radioactive_contamination_etc":0,"Failure_of_national_governance_eg_corruption_illicit_trade_organized_crime_impunity_political_deadlock_etc":0,"Interstate_conflict_with_regional_consequences":0,"Largescale_terrorist_attacks":0,"State_collapse_or_crisis_eg_civil_conflict_military_coup_failed_states_etc":0,"Weapons_of_mass_destruction":0,"Failure_of_urban_planning":0,"Food_crises":0,"Largescale_involuntary_migration":0,"Profound_social_instability":0,"Rapid_and_massive_spread_of_infectious_diseases":0,"Water_crises":0,"Breakdown_of_critical_information_infrastructure_and_networks":0,"Largescale_cyber_attacks":0,"Massive_incident_of_data_fraud_theft":0,"Massive_and_widespread_misuse_of_technologies":0}
+#risk_values = {"Asset_bubble_in_a_major_economy":0,"Deflation_in_a_major_economy":0,"Energy_price_shock_to_the_global_economy":0,"Failure_of_a_major_financial_mechanism_or_institution":0,"Failure_shortfall_of_critical_infrastructure":0,"Fiscal_crises_in_key_economies":0,"High_structural_unemployment_or_underemployment":0,"Unmanageable_inflation":0,"Extreme_weather_events_eg_floods_storms_etc":0,"Failure_of_climatechange_adaptation":0,"Major_biodiversity_loss_and_ecosystem_collapse_land_or_ocean":0,"Major_natural_catastrophes_eg_earthquake_tsunami_volcanic_eruption_geomagnetic_storms":0,"Manmade_environmental_catastrophes_eg_oil_spill_radioactive_contamination_etc":0,"Failure_of_national_governance_eg_corruption_illicit_trade_organized_crime_impunity_political_deadlock_etc":0,"Interstate_conflict_with_regional_consequences":0,"Largescale_terrorist_attacks":0,"State_collapse_or_crisis_eg_civil_conflict_military_coup_failed_states_etc":0,"Weapons_of_mass_destruction":0,"Failure_of_urban_planning":0,"Food_crises":0,"Largescale_involuntary_migration":0,"Profound_social_instability":0,"Rapid_and_massive_spread_of_infectious_diseases":0,"Water_crises":0,"Breakdown_of_critical_information_infrastructure_and_networks":0,"Largescale_cyber_attacks":0,"Massive_incident_of_data_fraud_theft":0,"Massive_and_widespread_misuse_of_technologies":0}
+
 
 def query_check(tweet,risk_dict):
-    
-    if "asset" in tweet and "bubble" in tweet or "market" in tweet and "bubble" in tweet or "financial" in tweet and "bubble" in tweet or "bubble" in tweet and "economy" in tweet or "speculative" in tweet and "bubble" in tweet or "bubble" in tweet and "property" in tweet:
-        risk_dict["Asset_bubble_in_a_major_economy"] += 1
 
-    if "economic" in tweet and "deflation" in tweet or "market" in tweet and "deflation" in tweet or "world" in tweet and "deflation" in tweet or "money" in tweet and "deflation" in tweet or "wage" in tweet and "deflation" in tweet or "global" in tweet and "deflation" in tweet:
-        risk_dict["Deflation_in_a_major_economy"] += 1
+    risk_dict = termsToChecks(query[:6], "Asset_bubble_in_a_major_economy", tweet, risk_dict)
+    
+    # if "asset" in tweet and "bubble" in tweet or "market" in tweet and "bubble" in tweet or "financial" in tweet and "bubble" in tweet or "bubble" in tweet and "economy" in tweet or "speculative" in tweet and "bubble" in tweet or "bubble" in tweet and "property" in tweet:
+    #     risk_dict["Asset_bubble_in_a_major_economy"] += 1
+
+    risk_dict = termsToChecks(query[6:12], "Deflation_in_a_major_economy", tweet, risk_dict)
+
+    # if "economic" in tweet and "deflation" in tweet or "market" in tweet and "deflation" in tweet or "world" in tweet and "deflation" in tweet or "money" in tweet and "deflation" in tweet or "wage" in tweet and "deflation" in tweet or "global" in tweet and "deflation" in tweet:
+    #     risk_dict["Deflation_in_a_major_economy"] += 1
         
     if "energy" in tweet and "price" in tweet or "gasoline" in tweet and "price" in tweet or "petrol" in tweet and "price" in tweet or "oil" in tweet and "collapse" in tweet or "oil" in tweet and "price" in tweet or "plummeting" in tweet and "oil" in tweet:
         risk_dict["Energy_price_shock_to_the_global_economy"] += 1
@@ -129,7 +135,7 @@ class MyListener(StreamListener):
                 print text_to_write
                 rowwriter.writerow([text_to_write,str(parsed_json['place'])])
                 
-                query_check(parsed_json['text'].encode('utf-8').lower(),risk_values)
+                risk_values = query_check(parsed_json['text'].encode('utf-8').lower(),{})
                 
                 #print parsed_json['place']
                 for item in risk_values:
