@@ -9,7 +9,7 @@ import config
 import json
 
 #query = ['Asset bubble','equity bubble','subprime','investment bubble','deflation','falling inflation','reduced inflation','falling prices','energy price','gasoline price','petrol price','bank failure','bank collapse','market collapse','market failure','bank bailout','critical infrastructure','infrastructure failure','fiscal crisis','financial crisis','underemployment','unemployment','Inflation','Storm','Flood','Extreme weather','Climate change','biodiversity','natural disaster','oil spill','environmental contamination','corruption','organized crime','war','state conflict','terrorism','terrorist','state collapse','civil crisis','coup','failed state','WMD','nuclear weapon','nuke','dirty bomb','failed urban planning','food crisis','starvation','refugee','refugees','riot','infectious','disease','epidemic','pandemic','drought','water shortage','internet collapse','cyber attack','cyber warfare','cyber terrorism','data fraud','identity theft','misuse of technology']
-
+query = ['zika']
 data_file = 'data.txt'
 
 class MyListener(StreamListener):
@@ -22,8 +22,9 @@ class MyListener(StreamListener):
         try:
             with open(self.outfile, 'a') as f:
                 parsed_json = json.loads(str(data))
-                f.write(parsed_json['text'].encode('utf-8'))
+                #f.write(parsed_json['text'].encode('utf-8'))
                 print(parsed_json['text'].encode('utf-8'))
+                print(parsed_json['lang'])
                 return True
             
         except BaseException as e:
